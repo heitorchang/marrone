@@ -15,8 +15,10 @@ async fn latin_phrase() -> impl Responder {
         "Animus meminisse horret",
         "Ars longa, vita brevis",
     ];
-    let mut rng = rand::rng();
-    let random_index = rng.random_range(0..LATIN_PHRASES.len());
+    // let mut rng = rand::rng();
+    // let random_index = rng.random_range(0..LATIN_PHRASES.len());
+    let random_index = rand::thread_rng().gen_range(0..LATIN_PHRASES.len());
+
     LATIN_PHRASES[random_index]
 }
 
